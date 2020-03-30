@@ -14,8 +14,9 @@ def home():
 		# print(image)
 		# filename = secure_filename(image.filename)
 		# image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-		return {'result': 'OK'}
-	return "hroku"
+		return {'result': 10}
+	else:
+		return "hroku"
 
 if __name__ == "__main__":
 	app.run(threaded = True)
