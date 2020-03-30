@@ -7,7 +7,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-@app.route("/", methods = ['GET', 'POST'])
+@app.route("/analyze", methods = ['GET', 'POST'])
 def home():
 	if request.method == "POST":
 		image = request.files['image']
