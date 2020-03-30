@@ -1,6 +1,21 @@
-from flask import Flask
+from flask import Flask, request
+
+
+
+# UPLOAD_FOLDER = '/home/raza/Desktop'
+
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
+# app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+@app.route("/", methods = ['GET', 'POST'])
+def home():
+	if request.method == "POST":
+		image = request.files['image']
+		# print(image)
+		# filename = secure_filename(image.filename)
+		# image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+		return {'result': 'OK'}
+	return "hroku"
+
+if __name__ == "__main__":
+	app.run(threaded = True)
